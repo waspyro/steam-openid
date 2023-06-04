@@ -1,1 +1,21 @@
-{"type":"module","name":"steam-openid","version":"1.0.0","description":"","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"keywords":[],"author":"","license":"MIT","dependencies":{"openid":"^2.0.10"}}
+{
+  "name": "steam-openid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "rm -rf dist && tsc --outDir dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "waspyro",
+  "license": "MIT",
+  "dependencies": {
+    "openid": "^2.0.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@types/openid": "^2.0.2"
+  }
+}
