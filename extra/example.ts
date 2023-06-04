@@ -1,9 +1,4 @@
-# steam-openid
-
-## Example
-
-```ts
-import SteamOpenID from './src'
+import SteamOpenID from '../src'
 import {Server} from 'http'
 
 let sessionid = 0
@@ -60,4 +55,3 @@ async function startSteamOpenIDHTTPServer(port) {
 }
 
 startSteamOpenIDHTTPServer(9090)
-```
