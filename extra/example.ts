@@ -16,8 +16,8 @@ async function startSteamOpenIDHTTPServer(port) {
         switch (url.pathname) {
 
             case '/': {
-                const sessionidMath = req.headers.cookie.match(/session=(\d+)/)
-                const steamid = sessionidMath && sessions.get(Number(sessionidMath[1]))
+                const sessionidMatch = req.headers.cookie.match(/session=(\d+)/)
+                const steamid = sessionidMatch && sessions.get(Number(sessionidMatch[1]))
                 if(steamid) return res.end(
                     '<p>your verified steamid: ' + steamid +
                     '</p><a href="/logout">logout</a>')
@@ -40,8 +40,8 @@ async function startSteamOpenIDHTTPServer(port) {
             }
 
             case '/logout': {
-                const sessionidMath = req.headers.cookie.match(/session=(\d+)/)
-                sessionidMath && sessions.delete(Number(sessionidMath[1]))
+                const sessionidMatch = req.headers.cookie.match(/session=(\d+)/)
+                sessionidMatch && sessions.delete(Number(sessionidMatch[1]))
                 return res.writeHead(302, {
                     Location: '/',
                     'Set-Cookie': 'session=; expires=Thu, 01 Jan 1970 00:00:00 GMT'
